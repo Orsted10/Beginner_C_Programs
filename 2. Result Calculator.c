@@ -1,15 +1,30 @@
 #include <stdio.h>
+
 int main() {
-    int m1, m2, m3;
-    float avg;
-    printf("Enter marks of 3 subjects: ");
-    scanf("%d%d%d", &m1, &m2, &m3);
-    int total = m1 + m2 + m3;
-    avg = total / 3.0;
-    printf("Total: %d\nAverage: %.2f\n", total, avg);
-    if(avg >= 90) printf("Grade: A\n");
-    else if(avg >= 75) printf("Grade: B\n");
-    else if(avg >= 60) printf("Grade: C\n");
-    else printf("Grade: D\n");
+    float sub1, sub2, sub3, total, average;
+    char grade;
+    
+    printf("Enter marks in 3 subjects: ");
+    scanf("%f %f %f", &sub1, &sub2, &sub3);
+    
+    total = sub1 + sub2 + sub3;
+    average = total / 3;
+    
+    if (average >= 90) {
+        grade = 'A';
+    } else if (average >= 80) {
+        grade = 'B';
+    } else if (average >= 70) {
+        grade = 'C';
+    } else if (average >= 60) {
+        grade = 'D';
+    } else {
+        grade = 'F';
+    }
+    
+    printf("Total: %.2f\n", total);
+    printf("Average: %.2f\n", average);
+    printf("Grade: %c\n", grade);
+    
     return 0;
 }
